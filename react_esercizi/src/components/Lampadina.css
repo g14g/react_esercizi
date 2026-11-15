@@ -1,0 +1,77 @@
+#lampadina {
+    background-color: #242424;
+    width: 100vw;
+    height: 100vh;
+
+    .container {
+        text-align: center;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        gap: 1rem;
+
+        span {
+            font-size: 1.25rem;
+            display: inline-block;
+            width: 7rem;
+            /* margin: 0 0 0 0.5rem; */
+            text-transform: uppercase;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        span.accesa {
+            font-weight: 700;
+            color: #242424;
+            padding: 0.5rem;
+            border-radius: 0.75rem;
+            border: 4px solid transparent;
+            background-color: #ffffff;
+        }
+
+        span.spenta {
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.25);
+            padding: 0.5rem;
+            border: 4px solid rgba(255, 255, 255, 0.25);
+            border-radius: 0.75rem;
+            background-color: transparent;
+        }
+    }
+
+    .bi-lightbulb {
+        font-size: 12rem;
+        transition: color 0.3s ease;
+    }
+
+    .bi-lightbulb.spenta {
+        color: rgba(255, 255, 255, 0.25);
+    }
+
+    .bi-lightbulb.accesa {
+        color: yellow;
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 0, 0.75));
+    }
+
+    button {
+        all: unset;
+        cursor: pointer;
+
+        i {
+            font-size: 4rem;
+            /* transition: color 0.3s ease, filter 0.3s ease; */
+
+        }
+
+        i.accesa {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        i.spenta {
+            color: rgba(255, 255, 255, 0.25);
+        }
+    }
+}
