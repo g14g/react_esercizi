@@ -1,35 +1,38 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useState } from "react";
 import "./Lampadina.css";
 
 function Lampadina() {
-    const [interruttore, setInterruttore] = useState("spenta");
+    // Stato del button
+    const [interruttore, setInterruttore] = useState(false);
 
-    // Prima versione, quando pensavo che l'icona del button dovesse avere un proprio useState dedicato
-    // const [interruttoreIcona, setInterruttoreIcona] = useState("bi bi-toggle-on accesa");
-    const interruttoreIcona = interruttore === "accesa" ? "bi bi-toggle-on accesa" : "bi bi-toggle-off spenta";
+    // Variabili che dipendono dallo stato del button
+    const statoLampadina = interruttore ? "accesa" : "spenta";
+    const interruttoreIcona = interruttore ? "bi bi-toggle-on accesa" : "bi bi-toggle-off spenta";
 
     function premiInterruttore() {
-        const statoLampadina = interruttore === "accesa" ? "spenta" : "accesa";
-        setInterruttore(statoLampadina);
-        console.log("La lampadina è stata:", statoLampadina);
-        // Prima versione, quando pensavo che l'icona del button dovesse avere un proprio useState dedicato
-        // setInterruttoreIcona(interruttoreIcona === "bi bi-toggle-on accesa" ? "bi bi-toggle-off spenta" : "bi bi-toggle-on accesa");
+        // Inverto lo stato di interruttore, indipendentemente dal suo valore
+        setInterruttore(!interruttore);
     }
+
+    // useEffect esegue il blocco di codice nella sua funzione arrow, solo quando la variabile
+    // specifica dopo la funzione arrow, tra parentesi quadre [interruttore] ha cambiato
+    // effettivamente stato
+    useEffect(() => {
+        console.log("La lampadina è stata:", statoLampadina);
+    }, [interruttore]);
 
     return (
         <React.Fragment>
             <section id="lampadina">
                 <div className="container">
-                    <i className={`bi bi-lightbulb ${interruttore}`}></i>
+                    <i className={`bi bi-lightbulb ${statoLampadina}`}></i>
                     <h2>Lampadina</h2>
                     <p>
-                        La lampadina è <span className={interruttore}>{interruttore}</span>
+                        La lampadina è <span className={statoLampadina}>{statoLampadina}</span>
                     </p>
                     <button onClick={premiInterruttore}>
                         <i className={interruttoreIcona}></i>
-                        {/* <i className="bi bi-toggle-off spenta"></i>
-                        <i className="bi bi-toggle-on accesa"></i> */}
                     </button>
                 </div>
             </section>
