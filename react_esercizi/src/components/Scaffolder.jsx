@@ -5,7 +5,9 @@ import "./Scaffolder.css";
 function Scaffolder() {
     return (
         <React.Fragment>
-            <div></div>
+            <section id="">
+                <div className="container"></div>
+            </section>
         </React.Fragment>
     );
 }

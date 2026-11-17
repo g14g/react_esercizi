@@ -19,7 +19,7 @@ function Lampadina() {
     // specifica dopo la funzione arrow, tra parentesi quadre [interruttore] ha cambiato
     // effettivamente stato
     useEffect(() => {
-        console.log("La lampadina è stata:", statoLampadina);
+        // console.log("La lampadina è stata:", statoLampadina);
     }, [interruttore]);
 
     return (
