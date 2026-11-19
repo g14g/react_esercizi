@@ -28,8 +28,11 @@ function Lampadina() {
                 <div className="container">
                     <i className={`bi bi-lightbulb ${statoLampadina}`}></i>
                     <h2>Lampadina</h2>
-                    <p>
+                    {/* <p>
                         La lampadina è <span className={statoLampadina}>{statoLampadina}</span>
+                    </p> */}
+                    <p>
+                        Ti si è <span className={statoLampadina}>{statoLampadina}</span> la lampadina?
                     </p>
                     <button onClick={premiInterruttore}>
                         <i className={interruttoreIcona}></i>

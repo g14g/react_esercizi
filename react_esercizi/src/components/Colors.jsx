@@ -9,25 +9,25 @@ function Colors() {
 
     function cambiaColore_v1(e, source) {
         // console.log("(v1) e.target.value:", e.target.value);
-        console.log("(v1) source:", source);
+        // console.log("(v1) source:", source);
         const coloreSelezionato_v1 = e.target.value;
         setColor_v1(coloreSelezionato_v1);
-        console.log("(v1) Ho selezionato un colore dalla tendina:", coloreSelezionato_v1);
+        // console.log("(v1) Ho selezionato un colore dalla tendina:", coloreSelezionato_v1);
     }
 
     function cambiaColore_v2(e, source) {
-        console.log("(v2) e.target.value:", e.target.value);
-        console.log("(v2) source:", source);
+        // console.log("(v2) e.target.value:", e.target.value);
+        // console.log("(v2) source:", source);
         const coloreSelezionato_v2 = e.target.value;
         setColor_v2(coloreSelezionato_v2);
-        console.log("(v2) Ho selezionato un colore dalla tendina:", coloreSelezionato_v2);
+        // console.log("(v2) Ho selezionato un colore dalla tendina:", coloreSelezionato_v2);
     }
 
     function cambiaColore_v2_Btn(e, source) {
         // console.log("(v2) e.target.value:", e.target);
-        console.log("(v2) source:", source);
+        // console.log("(v2) source:", source);
         setColor_v2_btn(color_v2);
-        console.log(`(v2) Ho applicato il colore ${color_v2} al quadrato`);
+        // console.log(`(v2) Ho applicato il colore ${color_v2} al quadrato`);
     }
 
     return (
