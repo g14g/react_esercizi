@@ -134,13 +134,34 @@
             border-radius: 1rem;
             background-color: #272727;
             border: 1px solid #323232;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 
             i {
                 font-size: 4rem;
                 height: 4rem;
                 color: rgba(255, 255, 255, 1);
                 transition: color 0.3s ease;
+                z-index: 2;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: black;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            /* &:hover {
+                filter: brightness(1.15);
+            } */
+            &:hover::after {
+                opacity: 0.15;
             }
         }
 
